@@ -1,0 +1,183 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>3x-ui安装指南+搭建reality+申请ssl证书 | Gridea</title>
+<link rel="shortcut icon" href="https://https://xiaofujie369.github.io/favicon.ico?v=1763323045542">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://https://xiaofujie369.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="3x-ui安装指南+搭建reality+申请ssl证书 | Gridea - Atom Feed" href="https://https://xiaofujie369.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="1.先更新Debian/Ubuntu系统及安装组件
+apt update -y &amp;&amp; apt install curl sudo wget git -y
+2关闭 防火墙
+sudo ufw disable
+3 安装3x-ui脚..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://https://xiaofujie369.github.io">
+  <img class="avatar" src="https://https://xiaofujie369.github.io/images/avatar.png?v=1763323045542" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              3x-ui安装指南+搭建reality+申请ssl证书
+            </h2>
+            <div class="post-info">
+              <span>
+                2025-11-17
+              </span>
+              <span>
+                1 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>1.先更新Debian/Ubuntu系统及安装组件<br>
+apt update -y &amp;&amp; apt install curl sudo wget git -y</p>
+<p>2关闭 防火墙<br>
+sudo ufw disable</p>
+<p>3 安装3x-ui脚本<br>
+bash &lt;(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)</p>
+<p>4.设置管理面板端口</p>
+<p>默认支持的HTTP端口 Cloudflare代理以下HTTP端口：80、8080、8880、2052、2082、2086、2095。</p>
+<p>默认支持的HTTPS端口 Cloudflare代理以下HTTPS端口：443、2053、2083、2087、2096、8443。</p>
+<p>5注册域名和绑定域名  （如果你的VPS有ipV6地址可以不用买域名直接裸跑）<br>
+将域名托管到cloudflare，没有的话 直接买。。</p>
+<p>6.设置面板证书</p>
+<p>输入x-ui 调出面板管理界面     选择18. SSL Certificate Management</p>
+<pre><code>           出现这个提示就填入域名
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://https://xiaofujie369.github.io/post/hello-gridea/">
+              <h3 class="post-title">
+                Hello Gridea
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://https://xiaofujie369.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
